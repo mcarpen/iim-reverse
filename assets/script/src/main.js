@@ -1,19 +1,6 @@
 $(document).ready(function () {
-    let alphabetTimeout = setInterval(binarAlphabetSwitch, 10000);
-
-    $('.alphabet-entry').on('keyup', function () {
-        if (this.value === 'server') {
-            clearInterval(alphabetTimeout);
-
-            $('.enigma-first').hide();
-
-            let html = '<div class="alert alert-info" role="alert">\n' +
-                'Bien joué t\'as trouvé le code !\n' +
-                '</div>\n' +
-                '<button type="button" class="btn btn-outline-info next-enigma" data-from="step-first" data-to="step-second">Énigme suivante</button>';
-
-            $('.block-main .infos').append(html);
-        }
+    $(document).on('click', '.enter', function() {
+        loadEnigma('step-one');
     });
 
     $(document).on('click', '.next-enigma', function () {

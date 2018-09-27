@@ -1,17 +1,21 @@
 html,
 body {
-  padding: 50px 0;
+  font-family: 'Share Tech Mono', monospace;
   background-color: #000; }
 
-#particles-js {
-  background-color: #000; }
-  #particles-js canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    top: 0;
-    left: 0; }
+body.enigma {
+  background: url(../../img/bg_enigme.png);
+  padding: 50px 0 30px;
+  min-height: 100vh; }
+
+.block-home {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url(../../img/tete.png);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 90%; }
 
 .block-main {
   position: relative;
@@ -21,13 +25,42 @@ body {
   padding: 50px;
   z-index: 999; }
 
-table .third.highlight {
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .abs-center .logo img,
+  .abs-center .hud img {
+    width: 80%; }
+  .abs-center .enter button {
+    margin-top: 30px;
+    background-color: transparent;
+    border: 1px solid #39d9c8;
+    border-radius: 35px;
+    color: #39d9c8;
+    padding: 13px 100px;
+    font-size: 18px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 500ms; }
+    .abs-center .enter button:hover {
+      animation: 1s infinite;
+      animation-name: bouncing; }
+    .abs-center .enter button:active, .abs-center .enter button:focus {
+      outline: 0; }
+
+.enigma-third table .third.highlight,
+.enigma-second table .third.highlight {
   background-color: #39d9c8; }
 
-table .clue {
+.enigma-third table .clue,
+.enigma-second table .clue {
   color: #8d8f91; }
 
-table tr {
+.enigma-third table tr,
+.enigma-second table tr {
   cursor: pointer; }
 
 .sketchfab-embed-wrapper iframe {
@@ -35,10 +68,11 @@ table tr {
   min-height: 500px; }
 
 .steps {
-  margin-top: 50px;
+  margin: 50px 0;
   text-align: center;
   color: #fff;
-  z-index: 999; }
+  z-index: 999;
+  display: none; }
   .steps .step {
     position: relative;
     display: inline-block; }
@@ -52,20 +86,18 @@ table tr {
       font-size: 13px;
       padding: 10px 15px;
       border-radius: 100%;
-      opacity: 0.7;
-      background-color: #39d9c8; }
+      opacity: 0.7; }
       .steps .step span.active {
         opacity: 1 !important;
         padding: 15px 20px !important;
-        border: 2px solid #fff; }
+        border: 2px solid #39d9c8; }
       .steps .step span.completed {
         opacity: .9;
         padding: 13px 19px;
-        border: 2px solid green;
+        border: 2px solid #36D97C;
         cursor: pointer; }
 
 .enigma-fifth {
-  font-family: 'Share Tech Mono', monospace;
   user-select: none; }
   .enigma-fifth .display {
     margin-left: 20px; }
